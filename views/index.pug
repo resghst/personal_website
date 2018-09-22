@@ -1,0 +1,400 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.3.1/css/all.css', integrity='sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Indie+Flower')
+    link(rel='stylesheet', href='/stylesheets/backvideo.css')
+    link(rel='stylesheet', href='/stylesheets/style1.css')
+    link(rel='stylesheet', href='/stylesheets/profile.css')
+    link(rel='stylesheet', href='/stylesheets/timegroup.css')
+    link(rel='stylesheet', href='/stylesheets/skillgroup.css')
+
+  body
+    .content
+      .backvideo
+        .video-container
+          video.fillWidth(autoplay, loop)
+            source(src='/video/Travaho.mp4', type='video/mp4')
+            | Your browser does not support the video tag. I suggest you upgrade your browser.
+            source(src='/video/Travaho.webm', type='video/webm')
+            | Your browser does not support the video tag. I suggest you upgrade your browser.
+      .circlearea
+        .layer1
+          .layer2
+            .layer3 
+              p Coding
+        .back
+          ul.circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+            li.small-circle
+      .organize
+        p 中興資工
+        p 中興資訊社
+        p 中興學生會（NCHUSG）－資訊部
+        p 　　　　　學生法院（原仲裁評議委員會）
+        p 無線通訊暨雲端計算實驗室（WCCC Lab）
+      .profile
+        .name
+          p 劉  鴻 文
+          p Liu,  Hung - Wen
+        .mail 
+          p hank181017@gmail.com
+    .presonal
+      .presonalback
+      .myCard
+        .flash 
+          i
+        .intro
+          .text-center 
+            img.rounded(src='/images/myphoto.jpg')
+          .name
+            p 劉鴻文
+            p Liu, Hung - Wen
+            p hank181017@gmail.com
+        .exper
+          .expTitle 
+            p 簡歷　Resume
+          .expContent
+            p 學生組織：
+            p 　第22屆　　　中興學生會（NCHUSG） 資訊部 部長
+            p 　2015～18　　中興資訊社　核心社員、講師、助教
+            p 　第23、24屆　學生法院　學生法官（原仲裁評議委員會）
+            p 競賽經歷：
+            p 　中興實驗室計畫 兼任助理
+            p 　中興專題競賽 佳作
+            p 　ITSA & PTC 線上程式設計競賽 績優團隊
+            p 　臺綜大年輕學者創新選拔　參加中．．．
+    .timearea
+      .timeback
+      .timegroup
+        ul.timeline
+          //- Item 1
+          li
+            .block.ani.inRight.direction-r
+              .flag-wrapper(data-toggle='collapse', href='#hic', role='button', aria-expanded='false', aria-controls='hic')
+                span.flag Freelancer
+                span.time-wrapper
+                  span.time 2013 - present  , Expand it  
+                    i.fas.fa-book
+              #hic.desc.collapse
+                My current employment. Way better than the position before!
+          //- Item 2
+          li
+            .block.ani.inLeft.direction-l
+              .flag-wrapper(data-toggle='collapse', href='#hic2', role='button', aria-expanded='false', aria-controls='hic2')
+                span.flag Apple Inc.
+                span.time-wrapper
+                  span.time 2011 - 2013  , Expand it  
+                    i.fas.fa-book
+              #hic2.desc.collapse 
+                My first employer. All the stuff I've learned and projects I've been working on.
+          //- Item 3
+          li
+            .block.ani.inRight.direction-r
+              .flag-wrapper(data-toggle='collapse', href='#hic3', role='button', aria-expanded='false', aria-controls='hic3')
+                span.flag Harvard University
+                span.time-wrapper
+                  span.time 2008 - 2011  , Expand it  
+                    i.fas.fa-book
+              #hic3.desc.collapse 
+                A description of all the lectures and courses I have taken and my final degree?
+    .skillarea 
+      .skilltitie
+        p 技能表 skills
+      .ranktable
+        p|階級分類： GrandMaster 、 Expert 、 Master 、
+        p|Experienced Coder 、 Experiencer 、 Learner 、 Beginner
+
+      .skillcontent
+        .contentgroup
+          .title 
+            p 程式語言 program language
+          .skill
+            .name
+              p Node.js
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p Python
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p C
+            .skillcard 
+              .rank
+                p experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p JAVA
+            .skillcard 
+              .rank
+                p Experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p C++
+            .skillcard 
+              .rank
+                p Learner
+              .progress
+                .learner
+          .skill
+            .name
+              p R
+            .skillcard 
+              .rank
+                p Beginner
+              .progress
+                .beginner
+        .contentgroup
+          .title 
+            p 前端技術 Front End
+          .skill
+            .name
+              p html5
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p JavaScript 
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p CSS3 
+            .skillcard 
+              .rank
+                p Experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p jQuery 
+            .skillcard 
+              .rank
+                p Experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p Less 
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p Bootstrap 
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p Semantic UI 
+            .skillcard 
+              .rank
+                p Experiencer
+              .progress
+                .experiencer
+        .contentgroup
+          .title 
+            p 後端技術 Back End
+          .skill
+            .name
+              p Express.js
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p Linux (Ubuntu) 
+            .skillcard 
+              .rank
+                p Experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p Nginx 
+            .skillcard 
+              .rank
+                p Experiencer
+              .progress
+                .experiencer
+        .contentgroup
+          .title 
+            p 機器學習 Machine Learning
+          .skill
+            .name
+              p SK-Learn
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p Keras
+            .skillcard 
+              .rank
+                p experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p TensorFlow
+            .skillcard 
+              .rank
+                p experiencer
+              .progress
+                .experiencer    
+        .contentgroup
+          .title 
+            p 資料庫相關 Data Base
+          .skill
+            .name
+              p MySQL
+            .skillcard 
+              .rank
+                p experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p ORM
+            .skillcard 
+              .rank
+                p experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p Sequelize
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+        .contentgroup
+          .title 
+            p 額外技術 Other Skills
+          .skill
+            .name
+              p Git
+            .skillcard 
+              .rank
+                p experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p REST API 
+            .skillcard 
+              .rank
+                p Experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p web crawler
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p Markdown
+            .skillcard 
+              .rank
+                p Learner
+              .progress
+                .learner
+          .skill
+            .name
+              p jieba
+            .skillcard 
+              .rank
+                p Learner
+              .progress
+                .learner
+          .skill
+            .name
+              p Socket.IO
+            .skillcard 
+              .rank
+                p experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p JS-Promise 
+            .skillcard 
+              .rank
+                p Experiencer
+              .progress
+                .experiencer
+          .skill
+            .name
+              p NPM
+            .skillcard 
+              .rank
+                p Experienced Coder
+              .progress
+                .experienced_coder
+          .skill
+            .name
+              p Anaconda
+            .skillcard 
+              .rank
+                p Experiencer
+              .progress
+                .experiencer
+
+                
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')    
+    script(src='/javascripts/timegroup.js')

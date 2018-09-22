@@ -1,0 +1,209 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Indie Flower', cursive !important;
+}
+
+.circlearea{
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 30vmin;
+  width: 30vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+@layer-circle: 25vmin;
+@shiftgap: @layer-circle/20 ;
+@layer-font: 8vmin;
+.layershift(@x, @y){
+  border: 1.75px solid rgba(236,244,243,.1);
+  border-radius: 50%;
+  width: @layer-circle + @x;
+  height: @layer-circle + @y;
+}
+
+.layer1 {
+  z-index: 1;
+  position: absolute;
+  .layershift(0vmin, 0vmin);
+  .layer2{
+    z-index: 0;
+    position: relative;
+    top: -1.25vmin;
+    left: -1.25vmin;
+    .layershift(2vmin,2vmin);
+    .layer3{
+      z-index: 0;
+      position: relative;
+      top: -1.5vmin;
+      left: -1.5vmin;
+      .layershift(4vmin,4vmin);
+      p{
+        font-weight: bold;
+        font-size: @layer-font;
+        text-align: center;
+        color: rgba(236,244,243,.7);
+        margin: 30% 0;
+      }
+    }
+  } 
+}
+//===========================================
+@circle-width: 70vmin;
+@small-circle-width: 10vmin;
+@dot-width: 1vmin;
+@dot-color: rgba(238,238,238,.5);
+@animation-duration: 2s;
+/* Must be equal to the number of li.small-circle elements in the DOM */
+@nb-small-circles: 10;
+@delay-between-small-circles: 0.2s;
+/* Hide the small circles and lines by switching this to false */
+@show-wireframe: true;
+
+.circlearea {
+  margin-top: 30px;
+  margin-left: 30px;
+  height: @circle-width;
+  weight: @circle-width;
+}
+
+.animation(@args) {
+  -webkit-animation: @args;
+  -moz-animation: @args;
+  -ms-animation: @args;
+  -o-animation: @args;
+  animation: @args;
+}
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+  -moz-animation-delay: @delay;
+  -ms-animation-delay: @delay;
+  -o-animation-delay: @delay;
+  animation-delay: @delay;
+}
+.transform(@args) {
+  -webkit-transform: @args;
+  -moz-transform: @args;
+  -ms-transform: @args;
+  -o-transform: @args;
+  transform: @args;
+}
+.transform-origin(@args) {
+  -webkit-transform-origin: @args;
+  -moz-transform-origin: @args;
+  -ms-transform-origin: @args;
+  -o-transform-origin: @args;
+  transform-origin: @args;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.circle {
+  width: @circle-width;
+  height: @circle-width;
+  border-radius: 50%;
+  position: relative;
+}
+
+.small-circle {
+  color: transparent;
+  width: @small-circle-width;
+  height: @small-circle-width;
+  border-radius: 50%;
+  position: absolute;
+  top: @circle-width/2 - @small-circle-width/2;
+  left: @circle-width/2 - @small-circle-width/2;
+  .transform-origin(center);
+  .transform(rotate(0deg) translateX(@circle-width/2));
+}
+
+.showWireframe(@show-wireframe) when (@show-wireframe = true) {
+  .small-circle {
+    .animation(fade @animation-duration infinite);
+  }
+}
+
+.showWireframe(@show-wireframe);
+
+.small-circle::before,
+.small-circle::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.small-circle::before {
+  background: @dot-color;
+  width: @dot-width;
+  height: @dot-width;
+  border-radius: 50%;
+  top: -1*@dot-width/2;
+  left: @small-circle-width/2 - @dot-width/2;
+  box-shadow: 0vmin @small-circle-width @dot-color;
+  .transform-origin(@dot-width/2 @small-circle-width/2+@dot-width/2);
+  .animation(half-rotation @animation-duration infinite);
+}
+
+.small-circle::after {
+  border-left: 1px solid currentColor;
+  height: 100%;
+  left: @small-circle-width/2;
+  .animation(half-rotation @animation-duration infinite);
+}
+
+.rotationFrames() {
+  50% {
+    .transform(rotate(.5turn));
+  }
+  100% {
+    .transform(rotate(.5turn));
+  }
+}
+@-webkit-keyframes half-rotation {.rotationFrames();}
+@-ms-keyframes half-rotation {.rotationFrames();}
+@-o-keyframes half-rotation {.rotationFrames();}
+@keyframes half-rotation {.rotationFrames();}
+
+.fadeframes() {
+  0% {
+    color: transparent;
+  }
+  15% {
+    color: @dot-color;
+  }
+  30% {
+    color: transparent;
+  }
+}
+@-webkit-keyframes fade {.fadeframes();}
+@-ms-keyframes fade {.fadeframes();}
+@-o-keyframes fade {.fadeframes();}
+@keyframes fade {.fadeframes();}
+
+.smallCircles(@i) when (@i > 1) {
+  .small-circle:nth-child(@{i}) {
+    .transform(rotate(360deg*(@i - 1)/@nb-small-circles) translateX(@circle-width/2));
+  }
+  .small-circle:nth-child(@{i}),
+  .small-circle:nth-child(@{i})::before,
+  .small-circle:nth-child(@{i})::after {
+    .animation-delay(@delay-between-small-circles*(@i - 1));
+  }
+  .smallCircles((@i - 1));
+}
+
+.smallCircles(@nb-small-circles);
